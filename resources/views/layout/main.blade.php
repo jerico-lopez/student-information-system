@@ -9,9 +9,7 @@
 </head>
 
 <body>
-    <div class="container">
-        @yield('content')
-    </div>
+    @yield('content')
 </body>
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
