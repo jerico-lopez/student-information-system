@@ -14,6 +14,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/courses">Courses</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>
