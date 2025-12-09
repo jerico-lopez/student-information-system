@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email', 50);
             $table->foreignId('course_id')->nullable()->constrained()->nullOnDelete();
             $table->string('address', 255);
+            $table->string('photo', 255)->nullable();
             $table->timestamps();
         });
     }

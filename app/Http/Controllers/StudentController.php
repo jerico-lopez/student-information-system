@@ -27,8 +27,15 @@ class StudentController extends Controller
             'age' => 'required|numeric|max:30',
             'email' => 'required|email|unique:students,email',
             'address' => 'required|string|max:255',
-            'course' => 'required|string|max:20'
+            'course_id' => 'required|exists:courses,id',
+            'photo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
         ]);
+
+        if($request->hasFile('photo')){
+            $filename = time() . '.' . $request->photo->extension();
+            $request->photo->storeAs('students', $filename, 'public');
+            $validated['photo'] = $filename;
+        }
 
         Student::create($validated);
 
