@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,7 @@ class StudentFactory extends Factory
      */
     public function definition(): array
     {
-        $courses = ['BSIT', 'BSCS'];
-        $course = $courses[rand(0,1)];
+        $course = Course::inRandomOrder()->first();
         return [
             'first_name' => fake()->firstName(),
             'middle_name' => fake()->lastName(),
@@ -26,7 +26,7 @@ class StudentFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'contact_number' => fake()->phoneNumber(),
             'address' => fake()->address(),
-            'course' => $course
+            'course_id' => $course
         ];
     }
 }

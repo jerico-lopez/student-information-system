@@ -47,9 +47,10 @@
         </div>
         <div class="mb-3">
             <label for="course" class="form-label">Course</label>
-            <select class="form-select" name="course" value="{{ $student->course }}">
-                <option value="BSIT">BSIT</option>
-                <option value="BSCS">BSCS</option>
+            <select class="form-select" name="course">
+                @foreach ($courses as $course)
+                    <option value="{{ $course }}" {{ $course == $student->course ? 'selected' : '' }}>{{$course->name}}</option>
+                @endforeach
             </select>
             @error('course')
                 <span class="text-danger">{{ $message }}</span>

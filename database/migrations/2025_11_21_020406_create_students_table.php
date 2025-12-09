@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('age');
             $table->string('contact_number', 20);
             $table->string('email', 50);
-            $table->string('course', 20);
+            $table->foreignId('course_id')->nullable()->constrained()->nullOnDelete();
             $table->string('address', 255);
             $table->timestamps();
         });

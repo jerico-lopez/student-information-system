@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,12 @@ Route::middleware('auth')->group(function () {
         Route::put('/students/update/{student}', 'update');
         Route::get('/students/delete/{student}', 'delete');
         Route::delete('/students/destroy/{student}', 'destroy');
+    });
+
+    Route::controller(CourseController::class)->group(function(){
+        Route::get('/courses', 'index');
+        Route::get('/courses/create', 'create');
+        Route::post('/courses', 'store');
     });
 });
 

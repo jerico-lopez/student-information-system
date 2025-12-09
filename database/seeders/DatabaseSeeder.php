@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
 use App\Models\Student;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -26,6 +27,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'juan@mail.com',
             'password' => '123'
         ]);
+
+        $courses = ['BSIT', 'BSCS', 'BSCRIM', 'BSN'];
+
+        foreach($courses as $course){
+            Course::create([
+                'name' => $course
+            ]);
+        }
 
         // Student::create([
         //     'first_name' => 'Juan',

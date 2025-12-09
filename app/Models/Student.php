@@ -18,4 +18,8 @@ class Student extends Model
         'address',
         'course'
     ];
+
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }

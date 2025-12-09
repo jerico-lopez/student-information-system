@@ -33,7 +33,7 @@
                     <td>{{ $student->address }}</td>
                     <td>{{ $student->contact_number }}</td>
                     <td>{{ $student->email }}</td>
-                    <td>{{ $student->course }}</td>
+                    <td>{{ $student->course->name }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                             <a href="/students/{{ $student->id }}" class="btn btn-success">View</a>
